@@ -1,0 +1,21 @@
+global_costmap:
+ 
+  map_type: costmap
+  global_frame: /map #odom
+  robot_base_frame: base_link
+  update_frequency: 1
+  publish_frequency: 1
+  
+#For consistency of the explore and global costmap the params should be the same in both config files
+
+#  width: 20
+#  height: 20
+#  resolution: 0.1
+#  origin_x: -10
+#  origin_y: -10
+  static_map: true
+  rolling_window: false
+  inflation_radius: 1.7
+
+
+

@@ -1,0 +1,27 @@
+<package>
+  <description brief="behaviour_based_local_planner">
+
+     behaviour_based_local_planner
+
+  </description>
+  <author>mjulia</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/behaviour_based_local_planner</url>
+  <depend package="roscpp"/>
+  <depend package="nav_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="std_msgs"/>
+  <depend package="tf"/>
+  <depend package="actionlib"/>
+  <depend package="opencv2"/>
+  <depend package="visualization_msgs"/>
+  <depend package="laser_geometry"/>
+  <depend package="matlib"/>
+  <depend package="bullet"/>
+  <export>
+    <cpp cflags="-I${prefix}/include"/>
+  </export>
+</package>
+
+

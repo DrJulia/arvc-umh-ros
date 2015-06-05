@@ -1,0 +1,99 @@
+<launch>
+	<param name="use_sim_time" value="true" />
+
+	<node name="stage_simulator" pkg="stage" type="stageros" args="-g $(find explore_test)/world/map6.world" /> 
+	<!--node name="stage_simulator" pkg="stage" type="stageros" args="-u 0.1 -v 0.1 $(find explore_test)/world/map6.world" /--> 
+
+	<!-- This is the explorer robot 0-->
+	<group ns="robot_0">
+		<param name="tf_prefix" value="robot_0"/>
+		<!-- localization in the map from map server-->
+		<!-- <node name="static_tf0" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /map /robot_0/map 20" /> -->
+
+		<node name="gmapping0" pkg="gmapping" type="slam_gmapping">
+			<remap from="scan" to="base_scan" />        
+			<param name="maxUrange" value ="6" /> 
+			<param name="maxRange" value ="10" /> 
+			<param name="odom_frame" value="odom" />
+			<param name="map_frame" value="/robot_0/map" />
+			<param name="base_frame" value="base_link" />
+			<param name="particles" value="30" />
+			<param name="xmin" value="-60" />
+			<param name="xmax" value="40" />
+			<param name="ymin" value="-50" />
+			<param name="ymax" value="50" />
+			<param name="srr" value="0.004" />
+			<param name="srt" value="0.004" />
+			<param name="str" value="0.004" />
+			<param name="stt" value="0.004" />
+			<param name="linearUpdate" value="0.2" />
+			<param name="angularUpdate" value="0.1" />
+			<param name="temporalUpdate" value="2.0" />
+			<param name="resampleThreshold" value="0.7" />
+			<param name="map_update_interval" value="2" />
+			<param name="transform_publish_period" value="0.2" />
+		</node>
+		
+		<node name="reactive_planner0" pkg="behaviour_based_local_planner" type="behaviour_based_local_planner" respawn="true">
+			<param name="robot_frame" value="/robot_0/base_link" />
+			<param name="ref_frame" value="/robot_0/odom" />
+			<param name="other_robots_frames" value="/robot_1/base_link" />
+			<param name="publish_map" value="True" />
+			<remap from="base_scan" to="/robot_0/base_scan" />
+			<remap from="dynamic_map" to="/fused_map" />
+		</node> 
+
+		<node name="deliberative_planner0" pkg="explore_tree_planner" type="explore_tree_planner" respawn="true">
+			<param name="robot_frame" value="/robot_0/base_link" />
+			<remap from="dynamic_map" to="/fused_map" />
+		</node> 
+	</group>
+
+	<!-- This is the explorer robot 0-->
+	<group ns="robot_1">
+		<param name="tf_prefix" value="robot_1"/>
+		<!-- localization in the map from map server-->
+		<!-- <node name="static_tf1" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /map /robot_1/map 20" /> -->
+
+		<node name="gmapping1" pkg="gmapping" type="slam_gmapping">
+			<remap from="scan" to="base_scan" />        
+			<param name="maxUrange" value ="6" /> 
+			<param name="maxRange" value ="10" /> 
+			<param name="odom_frame" value="odom" />
+			<param name="map_frame" value="/robot_1/map" />
+			<param name="base_frame" value="base_link" />
+			<param name="particles" value="30" />
+			<param name="xmin" value="-30" />
+			<param name="xmax" value="70" />
+			<param name="ymin" value="-50" />
+			<param name="ymax" value="50" />
+			<param name="srr" value="0.004" />
+			<param name="srt" value="0.004" />
+			<param name="str" value="0.004" />
+			<param name="stt" value="0.004" />
+			<param name="linearUpdate" value="0.2" />
+			<param name="angularUpdate" value="0.1" />
+			<param name="temporalUpdate" value="2.0" />
+			<param name="map_update_interval" value="2" />
+			<param name="resampleThreshold" value="0.7" />
+			<param name="transform_publish_period" value="0.2" />
+		</node> 
+		
+		<node name="reactive_planner1" pkg="behaviour_based_local_planner" type="behaviour_based_local_planner" respawn="true">
+			<param name="robot_frame" value="/robot_1/base_link" />
+			<param name="ref_frame" value="/robot_1/odom" />
+			<param name="other_robots_frames" value="/robot_0/base_link" />
+			<param name="publish_map" value="True" />
+			<remap from="base_scan" to="/robot_1/base_scan" />
+			<remap from="dynamic_map" to="/fused_map" />
+		</node> 
+
+		<node name="deliberative_planner1" pkg="explore_tree_planner" type="explore_tree_planner" respawn="true" >
+			<param name="robot_frame" value="/robot_1/base_link" />
+			<remap from="dynamic_map" to="/fused_map" />
+		</node> 
+	</group>
+
+	<node name="map_fusion" pkg="map_fusion" type="map_fusion" />
+
+</launch>

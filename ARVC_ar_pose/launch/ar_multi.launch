@@ -1,0 +1,21 @@
+<launch>
+	<node name="markers" pkg="ARVC_ar_pose" type="ar_multi" respawn="false" output="screen" ns="/pioneer1">
+		<param name="marker_pattern_list" type="string" value="$(find ARVC_ar_pose)/data/object_4x4"/>
+		<param name="threshold" type="int" value="127"/>
+		<param name="min_confidence" type="int" value="87"/>
+		<param name="publish_visual_markers" value="true" />
+		<param name="publish_tf" value="true" />
+		<param name="use_dynamic_threshold" value="true" />
+		<param name="use_history" value="false" />
+
+		<param name="pixelerror" value="1.0"/>
+		<param name="caliberror" value="5"/>
+		<param name="scaleerror" value="7.0"/>
+		<param name="alpha" value="1"/>
+		<param name="beta" value="2"/>
+		<param name="kappa" value="0"/>
+
+		<remap from="/usb_cam/image_raw" to="/pioneer1/stereo/camera_right/image_raw"/>
+		<remap from="/usb_cam/camera_info" to="/pioneer1/stereo/camera_right/camera_info"/>
+	</node>
+</launch>

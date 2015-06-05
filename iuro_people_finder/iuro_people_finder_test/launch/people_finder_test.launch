@@ -1,0 +1,107 @@
+<launch>
+	<param name="use_sim_time" value="true" />
+
+	<node name="stage_simulator" pkg="stage" type="stageros" args="$(find iuro_people_finder_test)/world/map6.world" />
+	<node name="map_server" pkg="map_server" type="map_server" args="$(find iuro_people_finder_test)/world/map6.yaml" >
+		<param name="frame_id" value="/map" />
+	</node>
+
+	<!-- This is the seeker robot -->
+	<group ns="robot_0">
+		<param name="tf_prefix" value="robot_0"/>
+		<!-- <node name="static_tf" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /map odom 20" /> -->
+		<!-- stage is working with perfect localization for this robot too!!! -->
+		<node name="amcl" pkg="amcl" type="amcl" >
+			<remap from="scan" to ="base_scan" />
+			<remap from="static_map" to ="/static_map" />
+			<param name="odom_frame_id" value="/robot_0/odom" />
+			<param name="base_frame_id" value="/robot_0/base_link" />
+			<param name="global_frame_id" value="/map" />
+		</node> 
+		<!-- this is to reset the map after we obtain a good localization -->
+		<node name="reset_map" pkg="actionlib" type="axclient.py" args="/robot_0/people_finder_mapper/reset iuro_people_finder_mapper/reset" />
+		<node pkg="move_base" type="move_base" respawn="true" name="move_base">
+			<remap from="map" to="/map" />
+			<rosparam file="$(find iuro_people_finder_test)/config/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+			<rosparam file="$(find iuro_people_finder_test)/config/costmap_common_params.yaml" command="load" ns="local_costmap"/>
+			<rosparam file="$(find iuro_people_finder_test)/config/local_costmap_params.yaml" command="load" />
+			<rosparam file="$(find iuro_people_finder_test)/config/global_costmap_params.yaml" command="load" />
+			<rosparam file="$(find iuro_people_finder_test)/config/base_local_planner_params.yaml" command="load" /> 
+			<rosparam file="$(find iuro_people_finder_test)/config/base_global_planner_params.yaml" command="load" /> 
+		</node>
+		<node name="fake_people_detector" pkg="iuro_fake_people_detector" type="fake_people_detector" >
+			<param name="ref_frame" value="/robot_0/odom" />
+			<param name="robot_frame" value="/robot_0/base_link" />
+			<param name="robot_tf_list" value="/robot_1/base_link" others="/robot_2/base_link /robot_3/base_link /robot_4/base_link" />
+		</node>
+		<!--<node name="person_movement_planner" pkg="iuro_person_movement_planner" type="person_movement_planner" />-->
+		<node name="active_people_search" pkg="iuro_active_people_search" type="active_people_search" >
+			<param name="robot_frame" value="/robot_0/base_link" />
+		</node>
+		<node name="people_finder_mapper" pkg="iuro_people_finder_mapper" type="people_finder_mapper" >
+			<remap from="map" to="/map" />
+			<param name="use_unknown" value="false"/>
+		</node>
+	</group>
+
+	<!-- These are the robots that simulate people -->
+	<group ns="robot_1">
+		<param name="tf_prefix" value="robot_1"/>
+		<node name="static_tf" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /map odom 20" />
+		<node pkg="move_base" type="move_base" respawn="true" name="move_base">
+			<remap from="map" to="/map" />
+			<rosparam file="$(find iuro_people_finder_test)/config/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+			<rosparam file="$(find iuro_people_finder_test)/config/costmap_common_params.yaml" command="load" ns="local_costmap"/>
+			<rosparam file="$(find iuro_people_finder_test)/config/local_costmap_params.yaml" command="load" />
+			<rosparam file="$(find iuro_people_finder_test)/config/global_costmap_params.yaml" command="load" />
+			<rosparam file="$(find iuro_people_finder_test)/config/base_local_planner_params.yaml" command="load" /> 
+			<rosparam file="$(find iuro_people_finder_test)/config/base_global_planner_params.yaml" command="load" /> 
+		</node>
+		<node name="person_movement_planner" pkg="iuro_person_movement_planner" type="person_movement_planner" />
+	</group>
+<!--	<group ns="robot_2">
+		<param name="tf_prefix" value="robot_2"/>
+		<node name="static_tf" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /map odom 20" />
+		<node pkg="move_base" type="move_base" respawn="true" name="move_base">
+			<remap from="map" to="/map" />
+			<rosparam file="$(find iuro_people_finder_test)/config/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+			<rosparam file="$(find iuro_people_finder_test)/config/costmap_common_params.yaml" command="load" ns="local_costmap"/>
+			<rosparam file="$(find iuro_people_finder_test)/config/local_costmap_params.yaml" command="load" />
+			<rosparam file="$(find iuro_people_finder_test)/config/global_costmap_params.yaml" command="load" />
+			<rosparam file="$(find iuro_people_finder_test)/config/base_local_planner_params.yaml" command="load" /> 
+			<rosparam file="$(find iuro_people_finder_test)/config/base_global_planner_params.yaml" command="load" /> 
+		</node>
+		<node name="person_movement_planner" pkg="iuro_person_movement_planner" type="person_movement_planner" />
+	</group>
+	<group ns="robot_3">
+		<param name="tf_prefix" value="robot_3"/>
+		<node name="static_tf" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /map odom 20" />
+		<node pkg="move_base" type="move_base" respawn="true" name="move_base">
+			<remap from="map" to="/map" />
+			<rosparam file="$(find iuro_people_finder_test)/config/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+			<rosparam file="$(find iuro_people_finder_test)/config/costmap_common_params.yaml" command="load" ns="local_costmap"/>
+			<rosparam file="$(find iuro_people_finder_test)/config/local_costmap_params.yaml" command="load" />
+			<rosparam file="$(find iuro_people_finder_test)/config/global_costmap_params.yaml" command="load" />
+			<rosparam file="$(find iuro_people_finder_test)/config/base_local_planner_params.yaml" command="load" /> 
+			<rosparam file="$(find iuro_people_finder_test)/config/base_global_planner_params.yaml" command="load" /> 
+		</node>
+		<node name="person_movement_planner" pkg="iuro_person_movement_planner" type="person_movement_planner" />
+	</group>
+	<group ns="robot_4">
+		<param name="tf_prefix" value="robot_4"/>
+		<node name="static_tf" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /map odom 20" />
+		<node pkg="move_base" type="move_base" respawn="true" name="move_base">
+			<remap from="map" to="/map" />
+			<rosparam file="$(find iuro_people_finder_test)/config/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+			<rosparam file="$(find iuro_people_finder_test)/config/costmap_common_params.yaml" command="load" ns="local_costmap"/>
+			<rosparam file="$(find iuro_people_finder_test)/config/local_costmap_params.yaml" command="load" />
+			<rosparam file="$(find iuro_people_finder_test)/config/global_costmap_params.yaml" command="load" />
+			<rosparam file="$(find iuro_people_finder_test)/config/base_local_planner_params.yaml" command="load" /> 
+			<rosparam file="$(find iuro_people_finder_test)/config/base_global_planner_params.yaml" command="load" /> 
+		</node>
+		<node name="person_movement_planner" pkg="iuro_person_movement_planner" type="person_movement_planner" />
+	</group>
+-->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find iuro_people_finder_test)/config/rviz.vcg"/>
+
+</launch>

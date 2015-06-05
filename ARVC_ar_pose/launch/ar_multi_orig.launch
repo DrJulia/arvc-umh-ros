@@ -1,0 +1,13 @@
+<launch>
+
+	<node name="markers" pkg="ar_pose" type="ar_multi" respawn="false" output="screen" ns="/pioneer1">
+		<param name="marker_pattern_list" type="string" value="$(find ARVC_ar_pose)/data/object_4x4"/>
+		<param name="threshold" type="int" value="100"/>		
+		<param name="publish_visual_markers" value="true" />
+		<param name="publish_tf" value="true" />
+		
+		<remap from="/usb_cam/image_raw" to="/pioneer1/stereo/camera_right/image_raw"/>
+		<remap from="/usb_cam/camera_info" to="/pioneer1/stereo/camera_right/camera_info"/>
+	</node>
+
+</launch>

@@ -1,0 +1,24 @@
+<package>
+  <description brief="graph_optimizer_slam">
+
+     graph_optimizer_slam
+
+  </description>
+  <author>mjulia</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/graph_optimizer_slam</url>
+  <depend package="roscpp"/>
+  <depend package="map_server"/>
+  <depend package="opencv2"/>
+  <depend package="tf"/>
+  <depend package="nav_msgs"/>
+  <depend package="gridmap_description_tools"/>
+  <depend package="toro"/>
+
+  <rosdep name="suitesparse" />
+
+
+</package>
+
+

@@ -1,0 +1,23 @@
+<package>
+  <description brief="iuro_fake_people_detector">
+
+ 	This package is an amazing fake, basically it looks for a set of tf frame names in the area scanned by the laser.            
+	This is supposed to be only for simulated environments where you know the position of the simulated objects to be found. 
+
+  </description>
+  <author>
+  	Miguel Julia  mjulia@umh.es (Miguel Hernandez University of Elche)
+  </author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/iuro_fake_people_detector</url>
+  <depend package="roscpp"/>
+  <depend package="nav_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="tf"/>
+  <depend package="laser_geometry"/>
+  <depend package="ARVC_libs"/>
+
+</package>
+
+

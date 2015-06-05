@@ -1,0 +1,22 @@
+
+
+<launch>
+	<node pkg="multirobot_EKF" type="multirobot_EKF" name="EKF" output="screen">
+  		<param name="number_of_robots" value="1" />
+		<param name="markers_sources" value="/pioneer1"/>
+		<param name="camera_frame" value="/right"/>
+		<param name="alpha1" value = "0.4" />
+		<param name="alpha2" value = "0.4" />
+		<param name="alpha3" value = "0.4" />
+		<param name="alpha4" value = "0.4" />
+		<param name="covini_x" value = "1.0" />
+		<param name="covini_y" value = "1.0" />
+		<param name="covini_th" value = "3" />
+		<param name="maxdist" value = "4" />
+		<param name="mahTh" value = "30.0" />
+		<param name="descTh" value = "0.5" />
+		<param name="matchByDist" value = "true" />
+	</node>
+</launch>
+
+

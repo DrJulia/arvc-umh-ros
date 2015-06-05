@@ -1,0 +1,16 @@
+<package>
+  <description brief="iuro_people_finder_test">
+
+     This package contains all the config and data files to run the simulation with stage to test the people finder algorithm
+
+  </description>
+  <author>
+  	Miguel Julia  mjulia@umh.es (Miguel Hernandez University of Elche)
+  </author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/iuro_people_finder_test</url>
+
+</package>
+
+

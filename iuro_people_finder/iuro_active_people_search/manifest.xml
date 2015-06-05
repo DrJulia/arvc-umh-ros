@@ -1,0 +1,27 @@
+<package>
+  <description brief="iuro_active_people_search">
+
+     This package consists of a planner that sends goals to move_base in order to actively seek persons.
+
+  </description>
+  <author>
+  	Miguel Julia  mjulia@umh.es (Miguel Hernandez University of Elche)
+  </author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/iuro_active_people_search</url>
+  <depend package="roscpp"/>
+  <depend package="iuro_fake_people_detector"/>
+  <depend package="iuro_people_finder_mapper"/>
+  <depend package="ARVC_libs"/>
+  <depend package="nav_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="std_msgs"/>
+  <depend package="tf"/>
+  <depend package="actionlib"/>
+  <depend package="move_base_msgs"/>
+  <depend package="opencv2"/>
+ 
+</package>
+
+

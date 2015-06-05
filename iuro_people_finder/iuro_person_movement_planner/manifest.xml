@@ -1,0 +1,22 @@
+<package>
+  <description brief="iuro_person_movement_planner">
+
+     This class sends "random" goals to move_base. 
+     Future work: make it more human like behaviour. Long distance goals to office or lab labeled locations, switching to idle motions when the goal is achieved, and repeat again and again. 
+
+  </description>
+  <author>
+  	Miguel Julia  mjulia@umh.es (Miguel Hernandez University of Elche)
+  </author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/iuro_person_movement_planner</url>
+  <depend package="roscpp"/>
+  <depend package="tf"/>
+  <depend package="nav_msgs"/>
+  <depend package="actionlib"/>
+  <depend package="move_base_msgs"/>
+
+</package>
+
+

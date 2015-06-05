@@ -1,0 +1,16 @@
+<package>
+  <description brief="toro">
+
+     toro
+
+  </description>
+  <author>mjulia</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/toro</url>
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -ltoro -ltoro3d"/>
+  </export>
+</package>
+
+

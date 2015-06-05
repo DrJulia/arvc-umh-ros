@@ -1,0 +1,346 @@
+Background\ ColorR=0
+Background\ ColorG=0
+Background\ ColorB=0
+Fixed\ Frame=/map
+Target\ Frame=/map
+Grid\ Cells.Alpha=1
+Grid\ Cells.ColorR=1
+Grid\ Cells.ColorG=0
+Grid\ Cells.ColorB=0
+Grid\ Cells.Enabled=1
+Grid\ Cells.Topic=/robot_1/move_base/local_costmap/inflated_obstacles
+Grid\ Cells2.Alpha=1
+Grid\ Cells2.ColorR=0
+Grid\ Cells2.ColorG=0
+Grid\ Cells2.ColorB=1
+Grid\ Cells2.Enabled=1
+Grid\ Cells2.Topic=/robot_2/move_base/local_costmap/inflated_obstacles
+Grid\ Cells3.Alpha=1
+Grid\ Cells3.ColorR=0
+Grid\ Cells3.ColorG=1
+Grid\ Cells3.ColorB=0
+Grid\ Cells3.Enabled=1
+Grid\ Cells3.Topic=/robot_3/move_base/local_costmap/inflated_obstacles
+Grid\ Cells4.Alpha=1
+Grid\ Cells4.ColorR=1
+Grid\ Cells4.ColorG=1
+Grid\ Cells4.ColorB=0
+Grid\ Cells4.Enabled=1
+Grid\ Cells4.Topic=/robot_4/move_base/local_costmap/inflated_obstacles
+Grid\ Cells5.Alpha=0.5
+Grid\ Cells5.ColorR=0.494118
+Grid\ Cells5.ColorG=0.494118
+Grid\ Cells5.ColorB=0.494118
+Grid\ Cells5.Enabled=0
+Grid\ Cells5.Topic=/robot_0/sensed_area
+Grid.Alpha=0.5
+Grid.Cell\ Size=1
+Grid.ColorR=0.5
+Grid.ColorG=0.5
+Grid.ColorB=0.5
+Grid.Enabled=1
+Grid.Line\ Style=0
+Grid.Line\ Width=0.03
+Grid.Normal\ Cell\ Count=0
+Grid.OffsetX=0
+Grid.OffsetY=0
+Grid.OffsetZ=0
+Grid.Plane=0
+Grid.Plane\ Cell\ Count=58
+Grid.Reference\ Frame=/map
+Image.Enabled=1
+Image.Image\ Topic=/robot_0/people_finder_map_as_image
+Image.Transport\ Hint=raw
+Laser\ Scan.Alpha=1
+Laser\ Scan.Billboard\ Size=0.01
+Laser\ Scan.Color\ Transformer=Intensity
+Laser\ Scan.Decay\ Time=0
+Laser\ Scan.Enabled=1
+Laser\ Scan.Position\ Transformer=XYZ
+Laser\ Scan.Selectable=1
+Laser\ Scan.Style=0
+Laser\ Scan.Topic=/robot_0/base_scan
+Laser\ Scan..AxisAutocompute\ Value\ Bounds=1
+Laser\ Scan..AxisAxis=2
+Laser\ Scan..AxisMax\ Value=10
+Laser\ Scan..AxisMin\ Value=-10
+Laser\ Scan..AxisUse\ Fixed\ Frame=1
+Laser\ Scan..Flat\ ColorColorR=1
+Laser\ Scan..Flat\ ColorColorG=1
+Laser\ Scan..Flat\ ColorColorB=1
+Laser\ Scan..IntensityAutocompute\ Intensity\ Bounds=1
+Laser\ Scan..IntensityMax\ ColorR=1
+Laser\ Scan..IntensityMax\ ColorG=1
+Laser\ Scan..IntensityMax\ ColorB=1
+Laser\ Scan..IntensityMax\ Intensity=0
+Laser\ Scan..IntensityMin\ ColorR=0
+Laser\ Scan..IntensityMin\ ColorG=0
+Laser\ Scan..IntensityMin\ ColorB=0
+Laser\ Scan..IntensityMin\ Intensity=0
+Map.Alpha=0.7
+Map.Draw\ Behind=0
+Map.Enabled=1
+Map.Topic=/map
+Path.Alpha=1
+Path.ColorR=1
+Path.ColorG=0
+Path.ColorB=0
+Path.Enabled=1
+Path.Topic=/robot_1/move_base/NavfnROS/plan
+Path2.Alpha=1
+Path2.ColorR=0
+Path2.ColorG=0
+Path2.ColorB=1
+Path2.Enabled=1
+Path2.Topic=/robot_2/move_base/NavfnROS/plan
+Path3.Alpha=1
+Path3.ColorR=0.1
+Path3.ColorG=1
+Path3.ColorB=0
+Path3.Enabled=1
+Path3.Topic=/robot_3/move_base/NavfnROS/plan
+Path4.Alpha=1
+Path4.ColorR=1
+Path4.ColorG=1
+Path4.ColorB=0
+Path4.Enabled=1
+Path4.Topic=/robot_4/move_base/NavfnROS/plan
+Path5.Alpha=1
+Path5.ColorR=1
+Path5.ColorG=1
+Path5.ColorB=1
+Path5.Enabled=1
+Path5.Topic=/robot_0/move_base/NavfnROS/plan
+Polygon.Alpha=1
+Polygon.ColorR=1
+Polygon.ColorG=0
+Polygon.ColorB=0
+Polygon.Enabled=1
+Polygon.Topic=/robot_1/move_base/local_costmap/robot_footprint
+Polygon2.Alpha=1
+Polygon2.ColorR=0
+Polygon2.ColorG=0
+Polygon2.ColorB=1
+Polygon2.Enabled=1
+Polygon2.Topic=/robot_2/move_base/local_costmap/robot_footprint
+Polygon3.Alpha=1
+Polygon3.ColorR=0
+Polygon3.ColorG=1
+Polygon3.ColorB=0
+Polygon3.Enabled=1
+Polygon3.Topic=/robot_3/move_base/local_costmap/robot_footprint
+Polygon4.Alpha=1
+Polygon4.ColorR=1
+Polygon4.ColorG=1
+Polygon4.ColorB=0
+Polygon4.Enabled=1
+Polygon4.Topic=/robot_4/move_base/local_costmap/robot_footprint
+Polygon5.Alpha=1
+Polygon5.ColorR=1
+Polygon5.ColorG=1
+Polygon5.ColorB=1
+Polygon5.Enabled=1
+Polygon5.Topic=/robot_0/move_base/local_costmap/robot_footprint
+Pose\ Array.ColorR=1
+Pose\ Array.ColorG=0.1
+Pose\ Array.ColorB=0
+Pose\ Array.Enabled=1
+Pose\ Array.Topic=/robot_0/particlecloud
+Pose.Alpha=1
+Pose.ColorR=1
+Pose.ColorG=0.1
+Pose.ColorB=0
+Pose.Enabled=1
+Pose.Head\ Length=0.3
+Pose.Head\ Radius=0.5
+Pose.Shaft\ Length=1
+Pose.Shaft\ Radius=0.3
+Pose.Shape=0
+Pose.Topic=/robot_1/move_base/current_goal
+Pose2.Alpha=1
+Pose2.ColorR=0
+Pose2.ColorG=0
+Pose2.ColorB=1
+Pose2.Enabled=1
+Pose2.Head\ Length=0.3
+Pose2.Head\ Radius=0.5
+Pose2.Shaft\ Length=1
+Pose2.Shaft\ Radius=0.3
+Pose2.Shape=0
+Pose2.Topic=/robot_2/move_base/current_goal
+Pose3.Alpha=1
+Pose3.ColorR=0
+Pose3.ColorG=1
+Pose3.ColorB=0
+Pose3.Enabled=1
+Pose3.Head\ Length=0.3
+Pose3.Head\ Radius=0.5
+Pose3.Shaft\ Length=1
+Pose3.Shaft\ Radius=0.3
+Pose3.Shape=0
+Pose3.Topic=/robot_3/move_base/current_goal
+Pose4.Alpha=1
+Pose4.ColorR=1
+Pose4.ColorG=1
+Pose4.ColorB=0
+Pose4.Enabled=1
+Pose4.Head\ Length=0.3
+Pose4.Head\ Radius=0.5
+Pose4.Shaft\ Length=1
+Pose4.Shaft\ Radius=0.3
+Pose4.Shape=0
+Pose4.Topic=/robot_4/move_base/current_goal
+Pose5.Alpha=1
+Pose5.ColorR=1
+Pose5.ColorG=1
+Pose5.ColorB=1
+Pose5.Enabled=1
+Pose5.Head\ Length=0.3
+Pose5.Head\ Radius=0.2
+Pose5.Shaft\ Length=1
+Pose5.Shaft\ Radius=0.3
+Pose5.Shape=0
+Pose5.Topic=/robot_0/move_base/current_goal
+TF.All\ Enabled=1
+TF.Enabled=1
+TF.Frame\ Timeout=15
+TF.Show\ Arrows=1
+TF.Show\ Axes=1
+TF.Show\ Names=1
+TF.Update\ Interval=0
+Tool\ 2D\ Nav\ GoalTopic=/robot_1/move_base_simple/goal
+Tool\ 2D\ Pose\ EstimateTopic=/robot_0/initialpose
+Camera\ Type=rviz::FixedOrientationOrthoViewController
+Camera\ Config=14.2865 4.21009 13.1073 0.301651 0.498149 -0.501843 -0.501844 -0.49815
+Property\ Grid\ State=selection=Pose Array.Enabled;expanded=.Global Options,TF./map/map,TF./robot_0/base_footprint/robot_0/base_footprint,TF./robot_0/base_laser_link/robot_0/base_laser_link,TF./robot_0/base_link/robot_0/base_link,TF./robot_0/odom/robot_0/odom,TF./robot_1/base_footprint/robot_1/base_footprint,TF./robot_1/base_laser_link/robot_1/base_laser_link,TF./robot_1/base_link/robot_1/base_link,TF./robot_1/odom/robot_1/odom,TF./robot_2/base_footprint/robot_2/base_footprint,TF./robot_2/base_laser_link/robot_2/base_laser_link,TF./robot_2/base_link/robot_2/base_link,TF./robot_2/odom/robot_2/odom,TF./robot_3/base_footprint/robot_3/base_footprint,TF./robot_3/base_laser_link/robot_3/base_laser_link,TF./robot_3/base_link/robot_3/base_link,TF./robot_3/odom/robot_3/odom,TF./robot_4/base_footprint/robot_4/base_footprint,TF./robot_4/base_laser_link/robot_4/base_laser_link,TF./robot_4/base_link/robot_4/base_link,TF./robot_4/odom/robot_4/odom,TF.Enabled.TF.Tree,TF./mapTree/map,TF./robot_0/odomTree/robot_0/odom,TF./robot_0/base_footprintTree/robot_0/base_footprint,TF./robot_0/base_linkTree/robot_0/base_link,TF./robot_0/base_laser_linkTree/robot_0/base_laser_link,TF./robot_1/odomTree/robot_1/odom,TF./robot_1/base_footprintTree/robot_1/base_footprint,TF./robot_1/base_linkTree/robot_1/base_link,TF./robot_1/base_laser_linkTree/robot_1/base_laser_link,TF./robot_2/odomTree/robot_2/odom,TF./robot_2/base_footprintTree/robot_2/base_footprint,TF./robot_2/base_linkTree/robot_2/base_link,TF./robot_2/base_laser_linkTree/robot_2/base_laser_link,TF./robot_3/odomTree/robot_3/odom,TF./robot_3/base_footprintTree/robot_3/base_footprint,TF./robot_3/base_linkTree/robot_3/base_link,TF./robot_3/base_laser_linkTree/robot_3/base_laser_link,TF./robot_4/odomTree/robot_4/odom,TF./robot_4/base_footprintTree/robot_4/base_footprint,TF./robot_4/base_linkTree/robot_4/base_link,TF./robot_4/base_laser_linkTree/robot_4/base_laser_link;scrollpos=0,18;splitterpos=236,476;ispageselected=1
+[Display0]
+Name=TF
+Package=rviz
+ClassName=rviz::TFDisplay
+[Display1]
+Name=Grid
+Package=rviz
+ClassName=rviz::GridDisplay
+[Display2]
+Name=Map
+Package=rviz
+ClassName=rviz::MapDisplay
+[Display3]
+Name=Pose
+Package=rviz
+ClassName=rviz::PoseDisplay
+[Display4]
+Name=Pose2
+Package=rviz
+ClassName=rviz::PoseDisplay
+[Display5]
+Name=Pose3
+Package=rviz
+ClassName=rviz::PoseDisplay
+[Display6]
+Name=Pose4
+Package=rviz
+ClassName=rviz::PoseDisplay
+[Display7]
+Name=Polygon
+Package=rviz
+ClassName=rviz::PolygonDisplay
+[Display8]
+Name=Polygon2
+Package=rviz
+ClassName=rviz::PolygonDisplay
+[Display9]
+Name=Polygon3
+Package=rviz
+ClassName=rviz::PolygonDisplay
+[Display10]
+Name=Polygon4
+Package=rviz
+ClassName=rviz::PolygonDisplay
+[Display11]
+Name=Path
+Package=rviz
+ClassName=rviz::PathDisplay
+[Display12]
+Name=Path2
+Package=rviz
+ClassName=rviz::PathDisplay
+[Display13]
+Name=Path3
+Package=rviz
+ClassName=rviz::PathDisplay
+[Display14]
+Name=Path4
+Package=rviz
+ClassName=rviz::PathDisplay
+[Display15]
+Name=Grid Cells
+Package=rviz
+ClassName=rviz::GridCellsDisplay
+[Display16]
+Name=Grid Cells2
+Package=rviz
+ClassName=rviz::GridCellsDisplay
+[Display17]
+Name=Grid Cells3
+Package=rviz
+ClassName=rviz::GridCellsDisplay
+[Display18]
+Name=Grid Cells4
+Package=rviz
+ClassName=rviz::GridCellsDisplay
+[Display19]
+Name=Polygon5
+Package=rviz
+ClassName=rviz::PolygonDisplay
+[Display20]
+Name=Grid Cells5
+Package=rviz
+ClassName=rviz::GridCellsDisplay
+[Display21]
+Name=Pose Array
+Package=rviz
+ClassName=rviz::PoseArrayDisplay
+[Display22]
+Name=Laser Scan
+Package=rviz
+ClassName=rviz::LaserScanDisplay
+[Display23]
+Name=Image
+Package=rviz
+ClassName=rviz::ImageDisplay
+[Display24]
+Name=Path5
+Package=rviz
+ClassName=rviz::PathDisplay
+[Display25]
+Name=Pose5
+Package=rviz
+ClassName=rviz::PoseDisplay
+[TF.]
+mapEnabled=1
+[TF./robot_0]
+base_footprintEnabled=1
+base_laser_linkEnabled=1
+base_linkEnabled=1
+odomEnabled=1
+[TF./robot_1]
+base_footprintEnabled=1
+base_laser_linkEnabled=1
+base_linkEnabled=1
+odomEnabled=1
+[TF./robot_2]
+base_footprintEnabled=1
+base_laser_linkEnabled=1
+base_linkEnabled=1
+odomEnabled=1
+[TF./robot_3]
+base_footprintEnabled=1
+base_laser_linkEnabled=1
+base_linkEnabled=1
+odomEnabled=1
+[TF./robot_4]
+base_footprintEnabled=1
+base_laser_linkEnabled=1
+base_linkEnabled=1
+odomEnabled=1

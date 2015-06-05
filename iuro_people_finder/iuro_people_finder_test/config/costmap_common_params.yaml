@@ -1,0 +1,32 @@
+#WARNING: parameters are also set at the specific costmap_params.yaml files. The parameters set here may be overwritten. 
+
+#ROBOT
+
+footprint: [[-0.175, -0.175], [-0.175, 0.175], [0.225, 0.175], [0.225, -0.175] ] # included 6 extra cm for front laser
+inscribed_radius: 0.175
+circumscribed_radius: 0.3 #0.286
+#robot_radius: ir_of_robot # only for circular robots
+
+#OBSTACLE HANDLING
+
+max_obstacle_height: 2.0
+obstacle_range: 16
+raytrace_range: 16
+
+#MAP PARAMETERS
+
+cost_scaling_factor: 6 # how fast the cost decays as we go away from the inflated obstacles (default 10)
+lethal_cost_threshold: 100 #threshold: when to consider a cost lethal when reading from the map server
+mark_threshold: 0
+unknown_threshold: 9
+track_unknown_space: false
+unknown_cost_value: 255
+
+
+#SOURCES
+
+transform_tolerance: 0.5 #max time delay for transform
+observation_sources: base_scan 
+
+base_scan: {topic: base_scan, data_type: LaserScan, expected_update_rate: 10, observation_persistance: 0.0, marking: true, clearing: true}
+

@@ -1,0 +1,29 @@
+<package>
+  <description brief="explore_tree_planner">
+
+     This package consists of a planner that sends goals to move_base in order to explore the enviroment.
+
+  </description>
+  <author>
+  	Miguel Julia  mjulia@umh.es (Miguel Hernandez University of Elche)
+  </author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/explore_tree_planner</url>
+  <depend package="roscpp"/>
+  <depend package="matlib"/>
+  <depend package="nav_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="std_msgs"/>
+  <depend package="tf"/>
+  <depend package="actionlib"/>
+  <depend package="move_base_msgs"/>
+  <depend package="opencv2"/>
+  <depend package="visualization_msgs"/>
+  <depend package="behaviour_based_local_planner" /> 
+  <export>
+    <cpp cflags="-I${prefix}/include"/>
+  </export>
+</package>
+
+

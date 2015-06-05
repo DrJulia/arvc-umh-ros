@@ -1,0 +1,4 @@
+NavfnROS:
+
+   planner_costmap_publish_frequency: 5
+

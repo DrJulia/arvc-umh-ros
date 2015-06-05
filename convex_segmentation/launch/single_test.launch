@@ -1,0 +1,9 @@
+<launch>
+
+	<node name="map_server" pkg="map_server" type="map_server" args="$(find explore_test)/world/map6.yaml" /> 
+
+	<node name="convex_segmentation" pkg="convex_segmentation" type="convex_segmentation" respawn="true" output="screen">
+		<remap from="dynamic_map" to="static_map" />
+	</node> 
+
+</launch>

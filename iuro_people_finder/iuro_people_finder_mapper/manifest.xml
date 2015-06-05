@@ -1,0 +1,24 @@
+<package>
+  <description brief="iuro_people_finder_mapper">
+
+    This node, creates and updates a map of the areas where it is more likely to find a human
+
+  </description>
+  <author>
+  	Miguel Julia  mjulia@umh.es (Miguel Hernandez University of Elche)
+  </author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/iuro_people_finder_mapper</url>
+  <depend package="roscpp"/>
+  <depend package="tf"/>
+  <depend package="sensor_msgs"/>
+  <depend package="nav_msgs"/>
+  <depend package="ARVC_libs"/>
+  <depend package="tf_conversions"/> 
+  <depend package="opencv2"/>
+  <depend package="cv_bridge"/>
+  <depend package="actionlib"/>
+</package>
+
+

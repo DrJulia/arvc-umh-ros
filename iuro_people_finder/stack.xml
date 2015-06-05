@@ -1,0 +1,9 @@
+<stack>
+  <description brief="iuro_people_finder">iuro_people_finder</description>
+  <author>Maintained by Miguel Julia</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/iuro_people_finder</url>
+  <depend stack="ros" />
+
+</stack>

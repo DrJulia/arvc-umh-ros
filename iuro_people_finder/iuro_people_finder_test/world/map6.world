@@ -1,0 +1,86 @@
+define block model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define topurg laser
+(
+  range_max 20.0
+  fov 180
+  samples 1081
+  # generic model properties
+  color "black"
+  size [ 0.050 0.050 0.100 ]
+)
+
+define erratic position
+(
+  #size [0.415 0.392 0.25]
+  size [0.350 0.350 0.250]
+  origin [0 0 0 0]
+  gui_nose 1
+  drive "omni"
+  localization "gps"
+  localization_origin [0 0 0 0]
+  topurg(pose [ 0.25 0 -0.1 0 ])
+)
+
+define person position
+(
+  #size [0.415 0.392 0.25]
+  size [0.350 0.350 0.250]
+  origin [0 0 0 0]
+  gui_nose 1
+  drive "omni"
+  localization "gps"
+  localization_origin [0 0 0 0]
+  topurg(pose [ 0.25 0 -0.1 0 ])
+)
+
+define floorplan model
+(
+  # sombre, sensible, artistic
+  color "gray30"
+
+  # most maps will need a bounding box
+  boundary 1
+
+  gui_nose 0
+  gui_grid 0
+
+  gui_outline 0
+  gripper_return 0
+  fiducial_return 0
+  laser_return 1
+)
+
+# set the resolution of the underlying raytrace model in meters
+resolution 0.02
+
+interval_sim 100  # simulation timestep in milliseconds
+
+window
+( 
+  size [ 1178.000 972.000 ] 
+  rotate [ 0 0 ]
+  scale 6.269 
+)
+
+# load an environment bitmap
+floorplan
+( 
+  name "map6"
+  bitmap "map6.pgm"
+  size [58.600 58.700 0.500]
+  origin [29.300 29.300 0.000 0.000]
+  pose [-29.300 -29.300 0.000 0.000]
+)
+
+# throw in a robot
+erratic( pose [ 17.0 17.0 0 0 ] name "p1" color "blue")
+person( pose [ -11.240 23.974 0 0 ] name "p2" color "red")
+person( pose [ 24.047 -10.129 0 0 ] name "p3" color "red")
+person( pose [ -6.495 -26.851 0 0 ] name "p4" color "red")
+person( pose [ -24.704 -11.630 0 0 ] name "p5" color "red")
+#block( pose [ -18.924 25.020 0 0.000 ] color "red" )

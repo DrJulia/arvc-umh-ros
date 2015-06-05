@@ -1,0 +1,30 @@
+<launch>
+
+	        <node name="static_tf" pkg="tf" type="static_transform_publisher" args="0.12 0 0 0 0 0 /base_link /laser 100" />
+
+		<node name="gmapping0" pkg="gmapping" type="slam_gmapping">
+			
+			<param name="maxUrange" value ="6" /> 
+			<param name="maxRange" value ="10" /> 
+			<param name="odom_frame" value="odom" />
+			<param name="map_frame" value="map" />
+			<param name="base_frame" value="base_link" />
+			<param name="particles" value="30" />
+			<param name="xmin" value="-60" />
+			<param name="xmax" value="40" />
+			<param name="ymin" value="-50" />
+			<param name="ymax" value="50" />
+			<param name="srr" value="0.004" />
+			<param name="srt" value="0.004" />
+			<param name="str" value="0.004" />
+			<param name="stt" value="0.004" />
+			<param name="linearUpdate" value="0.2" />
+			<param name="angularUpdate" value="0.1" />
+			<param name="temporalUpdate" value="2.0" />
+			<param name="resampleThreshold" value="0.7" />
+			<param name="map_update_interval" value="2" />
+			<param name="transform_publish_period" value="0.05" />
+		</node>
+		
+
+</launch>
